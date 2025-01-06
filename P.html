@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            background: #121212;
+            background-image: url("b.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+            background-color: #1f1f1f;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            font-size: 0.9rem;
+        }
+
+        header h1 {
+            font-size: 20px;
+        }
+
+        /* header:hover {
+            background-color: #000000;
+            opacity: 0.9;
+            transform: scale(1.05);
+        } */
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #2de020;
+        }
+
+        section {
+            padding: 50px 10%;
+            text-align: center;
+            background-color: rgba(30, 30, 30, 0.6);
+            border-radius: 10px;
+            margin: 30px auto;
+            max-width: 900px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+            border-radius: 2%;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            color: #ffcc00; /* Highlighted color */
+            margin-bottom: 30px;
+        }
+
+        section div {
+            margin-bottom: 40px;
+        }
+
+        section div h3 {
+            font-size: 1.8rem;
+            color: #dca50e;
+        }
+
+        section div p {
+            font-size: 1rem;
+            color: #ddd;
+            line-height: 1.6;
+        }
+
+        section div a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #007acc;
+            font-weight: 700;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        section div a:hover {
+            color: #dca50e;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px 30px;
+            background-color: #1f1f1f;
+            font-size: 0.9rem;
+            color: #f7f7f7;
+            margin-top: auto;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* footer:hover {
+            background-color: #007acc;
+        } */
+        /* Hamburger Icon */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 3px 0;
+            transition: all 0.1s;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .nav-links.mobile {
+            display: none;
+            flex-direction: column;
+            background-color: rgba(0, 0, 0, 0.9);
+            position: absolute;
+            top: 60px;
+            right: 0;
+            width: 200px;
+            box-shadow: 0 4px 6px rgb(108,242,184,0.9);
+            z-index: 1000;
+            border-radius:15%;
+        }
+
+        .nav-links.mobile.show {
+            display: flex;
+        }
+
+        .nav-links.mobile li {
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-links.mobile {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Rishabh's Portfolio</h1>
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="i.html">Home</a></li>
+                <li><a href="a.html">About</a></li>
+                <li><a href="s.html">Skills</a></li>
+                <li><a href="P.html">Projects</a></li>
+                <li><a href="Cer.html">Certificates</a></li>
+                <li><a href="C.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+
+        <!-- Car Price Prediction -->
+        <div>
+            <h3>Car Price Prediction</h3>
+            <p>A machine learning project aimed at predicting car prices based on features like mileage, brand, and year. The model uses regression algorithms to predict accurate prices for used cars.</p>
+            <img src="assets/project.jpg" alt="Car Price Prediction" style="width: 100%; max-width: 600px; border-radius: 8px;">
+            <a href="https://github.com/rishabh-prajapati/car-price-prediction" target="_blank">View on GitHub</a>
+        </div>
+
+        <!-- Students Performance Prediction -->
+        <div>
+            <h3>Students Performance Prediction</h3>
+            <p>This machine learning project predicts student performance based on various features like study time, previous marks, and attendance. It helps in identifying areas where students might need more attention.</p>
+            <img src="students.png" alt="Student Performance Prediction" style="width: 100%; max-width: 600px; border-radius: 8px;">
+            <br />
+            <a href="https://github.com/rishabh-prajapati/students-performance-prediction" target="_blank">View on GitHub</a>
+        </div>
+
+        <!-- Air Quality Prediction -->
+        <div>
+            <h3>Air Quality Prediction</h3>
+            <p>This project involves predicting air quality levels based on environmental data like temperature, humidity, and pollution levels. The goal is to forecast air quality for different regions.</p>
+            <img src="link" alt="Air Quality Prediction" style="width: 100%; max-width: 600px; border-radius: 8px;">
+            <a href="https://github.com/rishabh-prajapati/air-quality-prediction" target="_blank">View on GitHub</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Rishabh Prajapati. All Rights Reserved.</p>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('mobile');
+            navLinks.classList.toggle('show');
+        }
+    </script>
+
+
+
+</body>
+</html>

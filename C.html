@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            background: #121212;
+            background-image: url("b.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+            background-color: #1f1f1f;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            font-size: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+            transition: color 0.1s;
+        }
+
+        nav ul li a:hover {
+            color: #2de020;
+        }
+
+        section {
+            padding: 50px 10%;
+            text-align: center;
+            background-color: rgba(30, 30, 30, 0.6);
+            border-radius: 10px;
+            margin: 30px auto;
+            max-width: 900px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+            border-radius: 2%;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            color: #ffcc00;
+            margin-bottom: 30px;
+        }
+
+        section p {
+            font-size: 1.2rem;
+            color: #ddd;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: #fff;
+            font-size: 30px;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #dca50e;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #121212;
+            font-size: 0.8rem;
+            color: #f7f7f7;
+        }
+
+        iframe {
+            display: block;
+            margin: 0 auto;
+        }
+
+
+        .google-form-container {
+            width: 100%;
+            max-width: 900px;
+            /* Limits the maximum width of the form */
+            margin: 0 auto;
+            /* Centers the form */
+        }
+
+        .google-form-container iframe {
+            width: 100%;
+            height: 70vh;
+            /* Sets the height dynamically to 70% of the viewport height */
+            border: 0;
+        }
+
+
+
+
+        /* Hamburger Icon */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 3px 0;
+            transition: all 0.3s;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .nav-links.mobile {
+            display: none;
+            flex-direction: column;
+            background-color: rgba(0, 0, 0, 0.9);
+            position: absolute;
+            top: 60px;
+            right: 0;
+            width: 200px;
+            box-shadow: 0 4px 6px rgb(108,242,184,0.9);
+            z-index: 1000;
+            border-radius:15%;
+        }
+
+        .nav-links.mobile.show {
+            display: flex;
+        }
+
+        .nav-links.mobile li {
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-links.mobile {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Rishabh's Portfolio</h1>
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="i.html">Home</a></li>
+                <li><a href="a.html">About</a></li>
+                <li><a href="s.html">Skills</a></li>
+                <li><a href="P.html">Projects</a></li>
+                <li><a href="Cer.html">Certificates</a></li>
+                <li><a href="C.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out for collaborations or inquiries.</p>
+        <!-- Responsive Google Form Embed -->
+        <div class="google-form-container">
+            <iframe src="https://forms.gle/8ZPwwX92c5sXvKwN7" frameborder="0" allowfullscreen>
+            </iframe>
+        </div>
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/rishabh-prajapati-0910982b9" target="_blank"><i
+                    class="fab fa-linkedin"></i></a>
+            <a href="https://wa.me/917860634479" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://twitter.com/Pra98422Rishabh" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/rishabh______6900" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:prajapatirishabh071@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Rishabh Prajapati. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('mobile');
+            navLinks.classList.toggle('show');
+        }
+    </script>
+</body>
+
+</html>

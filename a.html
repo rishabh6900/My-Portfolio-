@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            background: #121212;
+            background-image: url("b.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+            background-color: #1f1f1f;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            font-size: 0.9rem;
+        }
+
+        header h1 {
+            font-size: 20px;
+        }
+
+        /* header:hover {
+            background-color: #000000;
+            transform: scale(1.05);
+        } */
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #2de020;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 50px 10%;
+            background-color: rgba(30, 30, 30, 0.6); /* Dark background with transparency */
+            border-radius: 10px;
+            margin: 30px auto;
+            width: 80%;
+            max-width: 900px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+            border-radius: 2%;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #ffcc00; /* Highlighted title color */
+        }
+
+        section p {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: #ddd; /* Softer text color */
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #1f1f1f;
+            font-size: 0.8rem;
+            color: #f7f7f7;
+            margin-top: auto; /* Ensures footer sticks to bottom */
+        }
+
+
+
+
+        /* Hamburger Icon */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 3px 0;
+            transition: all 0.1s;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .nav-links.mobile {
+            display: none;
+            flex-direction: column;
+            background-color: rgba(0, 0, 0, 0.9);
+            position: absolute;
+            top: 60px;
+            right: 0;
+            width: 200px;
+            box-shadow: 0 4px 6px rgb(108,242,184,0.9);
+            z-index: 1000;
+            border-radius:15%;
+        }
+
+        .nav-links.mobile.show {
+            display: flex;
+        }
+
+        .nav-links.mobile li {
+            text-align: center;
+            padding: 10px 0;
+        }
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-links.mobile {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Rishabh's Portfolio</h1>
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="i.html">Home</a></li>
+                <li><a href="a.html">About</a></li>
+                <li><a href="s.html">Skills</a></li>
+                <li><a href="P.html">Projects</a></li>
+                <li><a href="Cer.html">Certificates</a></li>
+                <li><a href="C.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            Hello! I am <strong>Rishabh Prajapati</strong>, an undergraduate student in <strong>Computer Science and Data Analytics</strong> at <strong>IIT Patna</strong>. 
+            I am driven by a passion for technology and the boundless potential of data.
+        </p>
+        <p>
+            My journey began with a strong foundation in Science and Mathematics, which sparked my interest in 
+            data-driven solutions. I thrive on challenges that require a blend of <strong>logic</strong>, 
+            <strong>analytics</strong>, and <strong>creativity</strong>.
+        </p>
+        <p>
+            With expertise in <strong>Python</strong>, <strong>SQL</strong>, and <strong>Machine Learning</strong>, I focus on applying 
+            my knowledge to real-world problems. I am excited about learning new technologies and taking on innovative projects 
+            in the fields of <strong>Data Science</strong> and <strong>Artificial Intelligence</strong>.
+        </p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Rishabh Prajapati. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('mobile');
+            navLinks.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>  

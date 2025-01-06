@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            background: #121212;
+            background-image: url("b.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+            background-color: #1f1f1f;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            font-size: 0.9rem;
+        }
+
+        header h1 {
+            font-size: 20px;
+        }
+        /* header:hover {
+            background-color: #000000;
+            opacity: 0.9;
+            transform: scale(1.05);
+        } */
+
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+            transition: color 0.1s;
+        }
+
+        nav ul li a:hover {
+            color: #2de020;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #121212;
+            font-size: 0.8rem;
+            color: #f7f7f7;
+        }
+
+        /* section {
+            text-align: center;
+            margin-top: 50px;
+            color: #fff;
+        } */
+        section {
+            padding: 50px 10%;
+            text-align: center;
+            background-color: rgba(30, 30, 30, 0.6);
+            border-radius: 10px;
+            margin: 30px auto;
+            max-width: 900px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+            border-radius: 2%;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        /* section div {
+            display: inline-block;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 700px;
+            margin: 10px;
+        } */
+
+        section img {
+            width: 100%;
+            max-width: 700px; /* Increased image size */
+            margin-top: 20px;
+            border-radius: 10px;
+            object-fit: cover; /* Ensures the image scales properly */
+        }
+        /* Hamburger Icon */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 3px 0;
+            transition: all 0.3s;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .nav-links.mobile {
+            display: none;
+            flex-direction: column;
+            background-color: rgba(0, 0, 0, 0.9);
+            position: absolute;
+            top: 60px;
+            right: 0;
+            width: 200px;
+            box-shadow: 0 4px 6px rgb(108,242,184,0.9);
+            z-index: 1000;
+            border-radius:15%;
+        }
+
+        .nav-links.mobile.show {
+            display: flex;
+        }
+
+        .nav-links.mobile li {
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-links.mobile {
+                display: none;
+            }
+        }
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Rishabh's Portfolio</h1>
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="i.html">Home</a></li>
+                <li><a href="a.html">About</a></li>
+                <li><a href="s.html">Skills</a></li>
+                <li><a href="P.html">Projects</a></li>
+                <li><a href="Cer.html">Certificates</a></li>
+                <li><a href="C.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>Certificates</h2>
+        <div>
+            <h3>Pandas</h3>
+            <p>Pandas Course completed on Kaggle.</p>
+            <img src="Rishabh Prajapati - Pandas.png" alt="Pandas Certificate">
+        </div>
+        <div>
+            <h3>PyTorch</h3>
+            <p>PyTorch Course completed on Udemy.</p>
+            <img src="Pytroch.jpg" alt="PyTorch Certificate">
+        </div>
+    </section>
+
+
+
+    <footer>
+        <p>&copy; 2025 Rishabh Prajapati. All Rights Reserved.</p>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('mobile');
+            navLinks.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>

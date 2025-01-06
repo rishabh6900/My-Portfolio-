@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            background: #121212 url("b.png") no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+            background-color: #1f1f1f;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            font-size: 0.9rem;
+        }
+
+        header h1 {
+            font-size: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+            transition: color 0.1s;
+        }
+
+        nav ul li a:hover {
+            color: #2de020;
+        }
+
+        #skills {
+            margin-top: 50px;
+            /* Adds margin above the section to increase space from the navbar */
+            padding: 50px 10%;
+            background-color: rgba(30, 30, 30, 0.6);
+            border-radius: 2%;
+        }
+
+        /* For .nav-links */
+        .nav-links {
+            margin-right: 20px;
+            /* Adds space between the nav-links and the edge of the viewport */
+        }
+
+        #skills h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .skill {
+            margin-bottom: 15px;
+        }
+
+        .skill h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.2rem;
+        }
+
+        .skill-bar {
+            position: relative;
+            width: 100%;
+            height: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .skill-bar span {
+            display: block;
+            height: 100%;
+            background-color: #007acc;
+            width: 0;
+            animation: loadBar 1s forwards;
+        }
+
+        @keyframes loadBar {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: var(--skill-level);
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #121212;
+            font-size: 0.8rem;
+            color: #f7f7f7;
+            margin-top: 110px;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 3px 0;
+            transition: all 0.3s;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .nav-links.mobile {
+            display: none;
+            flex-direction: column;
+            background-color: rgba(0, 0, 0, 0.9);
+            position: absolute;
+            top: 60px;
+            right: 0;
+            width: 200px;
+            box-shadow: 0 4px 6px rgb(108, 242, 184, 0.9);
+            z-index: 1000;
+            border-radius: 15%;
+        }
+
+        .nav-links.mobile.show {
+            display: flex;
+        }
+
+        .nav-links.mobile li {
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-links.mobile {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Rishabh's Portfolio</h1>
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()" tabindex="0" aria-label="Toggle navigation">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="i.html">Home</a></li>
+                <li><a href="a.html">About</a></li>
+                <li><a href="s.html">Skills</a></li>
+                <li><a href="P.html">Projects</a></li>
+                <li><a href="Cer.html">Certificates</a></li>
+                <li><a href="C.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skill">
+            <h3>Python</h3>
+            <div class="skill-bar">
+                <span style="--skill-level: 85%;"></span>
+            </div>
+        </div>
+        <div class="skill">
+            <h3>Machine Learning</h3>
+            <div class="skill-bar">
+                <span style="--skill-level: 80%;"></span>
+            </div>
+        </div>
+        <div class="skill">
+            <h3>Deep Learning</h3>
+            <div class="skill-bar">
+                <span style="--skill-level: 30%;"></span>
+            </div>
+        </div>
+        <div class="skill">
+            <h3>SQL</h3>
+            <div class="skill-bar">
+                <span style="--skill-level: 75%;"></span>
+            </div>
+        </div>
+        <div class="skill">
+            <h3>Pandas</h3>
+            <div class="skill-bar">
+                <span style="--skill-level: 75%;"></span>
+            </div>
+        </div>
+        <div class="skill">
+            <h3>Numpy</h3>
+            <div class="skill-bar">
+                <span style="--skill-level: 75%;"></span>
+            </div>
+        </div>
+        <div class="skill">
+            <h3>EDA</h3>
+            <div class="skill-bar">
+                <span style="--skill-level: 85%;"></span>
+            </div>
+        </div>
+        <div class="skill">
+            <h3>Scikit-Learn</h3>
+            <div class="skill-bar">
+                <span style="--skill-level: 70%;"></span>
+            </div>
+        </div>
+        <div class="skill">
+            <h3>Ploty</h3>
+            <div class="skill-bar">
+                <span style="--skill-level: 50%;"></span>
+            </div>
+        </div>
+        <div class="skill">
+            <h3>Pandas-Perofoling</h3>
+            <div class="skill-bar">
+                <span style="--skill-level: 85%;"></span>
+            </div>
+        </div>
+        <div class="skill">
+            <h3>Frontend Developer</h3>
+            <div class="skill-bar">
+                <span style="--skill-level: 75%;"></span>
+            </div>
+        </div>
+        <div class="skill">
+            <h3>Pipeline</h3>
+            <div class="skill-bar">
+                <span style="--skill-level: 60%;"></span>
+            </div>
+        </div>
+        
+
+
+    </section>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Rishabh Prajapati. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Hamburger Menu Toggle
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('mobile');
+            navLinks.classList.toggle('show');
+        }
+
+        // Dynamic Footer Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

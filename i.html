@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            background: #121212;
+            background-image: url("b.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+            background-color: #1f1f1f;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            font-size: 0.9rem;
+        }
+
+        header h1 {
+            font-size: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+            transition: color 0.1s;
+        }
+
+        nav ul li a:hover {
+            color: #2de020;
+        }
+
+        #hero {
+            height: 100vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            padding: 20px 10%;
+        }
+
+        #hero .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        #hero h1 {
+            font-size: 3rem;
+            margin: 20px 0;
+        }
+
+        #hero h2 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+
+        #hero h3 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        #hero .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #hero .hero-image img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 50%;
+            border: 5px solid #eee;
+            box-shadow: 8px 16px 32px rgba(255, 255, 255, 1);
+            transition: transform 0.3s, box-shadow 0.9s, border-color 0.3s;
+        }
+
+        #hero .hero-image img:hover {
+            transform: scale(1.1);
+            box-shadow: 16px 32px 64px rgba(112, 238, 234, 1);
+            border-color: #6cf2b8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #121212;
+            font-size: 0.8rem;
+            color: #f7f7f7;
+        }
+
+        /* Hamburger Icon */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 3px 0;
+            transition: all 0.3s;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .nav-links.mobile {
+            display: none;
+            flex-direction: column;
+            background-color: rgba(0, 0, 0, 0.9);
+            position: absolute;
+            top: 60px;
+            right: 0;
+            width: 200px;
+            box-shadow: 0 4px 6px rgb(108,242,184,0.9);
+            z-index: 1000;
+            border-radius:15%;
+        }
+
+        .nav-links.mobile.show {
+            display: flex;
+        }
+
+        .nav-links.mobile li {
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-links.mobile {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #hero {
+                flex-direction: column-reverse;
+                /* Place image before text */
+                text-align: center;
+                padding: 10px 5%;
+                /* Reduce padding */
+            }
+
+            #hero .content {
+                order: 2;
+                margin-top: 10px;
+                /* Reduce gap after image */
+            }
+
+            #hero .hero-image {
+                order: 1;
+                margin-bottom: 10px;
+                /* Reduce gap before text */
+            }
+
+            #hero h1 {
+                font-size: 2rem;
+            }
+
+            #hero h2,
+            #hero h3 {
+                font-size: 1rem;
+            }
+
+            #hero .hero-image img {
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #hero {
+                padding: 8px 3%;
+                /* Reduce padding further for smaller screens */
+            }
+
+            #hero .content {
+                margin-top: 8px;
+                /* Reduce gap after image */
+            }
+
+            #hero .hero-image {
+                margin-bottom: 8px;
+                /* Reduce gap before text */
+            }
+
+            #hero h1 {
+                font-size: 1.5rem;
+            }
+
+            #hero h2,
+            #hero h3 {
+                font-size: 0.9rem;
+            }
+
+            #hero .hero-image img {
+                max-width: 250px;
+                /* Slightly smaller image */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Rishabh's Portfolio</h1>
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="i.html">Home</a></li>
+                <li><a href="a.html">About</a></li>
+                <li><a href="s.html">Skills</a></li>
+                <li><a href="P.html">Projects</a></li>
+                <li><a href="Cer.html">Certificates</a></li>
+                <li><a href="C.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="content">
+            <h1>Hi, I'm Rishabh Prajapati</h1>
+            <h2>Study in Indian Institute of Technology, Patna</h2>
+            <h3>Data Scientist, ML Engineer</h3>
+        </div>
+        <div class="hero-image">
+            <img src="rishabh.jpg" alt="Rishabh Prajapati">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Rishabh Prajapati. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('mobile');
+            navLinks.classList.toggle('show');
+        }
+    </script>
+</body>
+
+</html>
