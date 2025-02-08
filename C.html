@@ -110,22 +110,62 @@
         }
 
 
-        .google-form-container {
-            width: 100%;
-            max-width: 900px;
-            /* Limits the maximum width of the form */
-            margin: 0 auto;
-            /* Centers the form */
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .google-form-container iframe {
+        .contact-container form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
             width: 100%;
-            height: 70vh;
-            /* Sets the height dynamically to 70% of the viewport height */
-            border: 0;
+            max-width: 500px;
         }
 
+        .contact-input {
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 15px;
+            border: none;
+            border: 5px solid #eee;
+            /* border-color: #dca50e; */
+            box-shadow: 0 2.5px 4.5px #dca50e;
+        }
+        .contact-input:hover{
+            background-color: white;
+            border-color: #dca50e;
 
+        }
+
+        .contact-container button {
+            background-color: #dca50e;
+            color: #fff;
+            padding: 10px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background 0.1s;
+            
+        }
+        /* .contact-container button :hover {
+            color: #dca50e;
+        } */
+
+        .contact-container button:hover {
+            /* background-color: #dca50e; */
+            background-color: #2de020;
+        }
+
+        /* Increased textarea height */
+        textarea.contact-input {
+            height: 150px;
+            /* Adjusted for better input visibility */
+            resize: vertical;
+            /* Allows user to resize vertically */
+        }
 
 
         /* Hamburger Icon */
@@ -156,9 +196,9 @@
             top: 60px;
             right: 0;
             width: 200px;
-            box-shadow: 0 4px 6px rgb(108,242,184,0.9);
+            box-shadow: 0 4px 6px rgb(108, 242, 184, 0.9);
             z-index: 1000;
-            border-radius:15%;
+            border-radius: 15%;
         }
 
         .nav-links.mobile.show {
@@ -205,15 +245,18 @@
             </ul>
         </nav>
     </header>
-
     <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Feel free to reach out for collaborations or inquiries.</p>
-        <!-- Responsive Google Form Embed -->
-        <div class="google-form-container">
-            <iframe src="https://forms.gle/8ZPwwX92c5sXvKwN7" frameborder="0" allowfullscreen>
-            </iframe>
+        <div class="contact-container">
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <h2>Contact Me</h2>
+                <input type="hidden" name="access_key" value="0de668ca-10af-4b31-982e-28df35a5542e">
+                <input type="text" name="name" placeholder="Your Name" class="contact-input" required>
+                <input type="email" name="email" placeholder="Your Email" class="contact-input" required>
+                <textarea name="message" placeholder="Your Message" class="contact-input" required></textarea>
+                <button type="submit">Submit </button>
+            </form>
         </div>
+
         <!-- Social Media Icons -->
         <div class="social-icons">
             <a href="https://www.linkedin.com/in/rishabh-prajapati-0910982b9" target="_blank"><i
