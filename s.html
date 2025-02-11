@@ -57,10 +57,10 @@
 
         #skills {
             margin-top: 50px;
-            /* Adds margin above the section to increase space from the navbar */
             padding: 50px 10%;
-            background-color: rgba(30, 30, 30, 0.6);
-            border-radius: 2%;
+            background-color: rgba(30, 30, 30, 0.8);
+            border-radius: 10px;
+            /* box-shadow: 0 0 15px rgba(255, 255, 255, 0.2); */
         }
 
         /* For .nav-links */
@@ -73,33 +73,40 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 20px;
-            color: #fff;
+            /* color: #2de020; */
+            color: #ffcc00;
+            /* text-shadow: 2px 2px 10px rgba(45, 224, 32, 0.8); */
         }
 
         .skill {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .skill h3 {
             margin: 0 0 5px 0;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            /* color: #f1c40f; */
+            color: #ffcc00;
         }
 
         .skill-bar {
             position: relative;
             width: 100%;
-            height: 20px;
+            height: 25px;
             background-color: #333;
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
+            box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.5);
         }
 
         .skill-bar span {
             display: block;
             height: 100%;
-            background-color: #007acc;
+            background: linear-gradient(90deg, #00ffcc, #009999);
             width: 0;
-            animation: loadBar 1s forwards;
+            border-radius: 12px;
+            animation: loadBar 2.5s forwards;
+            box-shadow: 0 0 10px rgba(0, 255, 204, 0.8);
         }
 
         @keyframes loadBar {
