@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            background: #121212;
+            background-image: url("b.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+            background-color: #1f1f1f;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            font-size: 0.9rem;
+        }
+
+        header h1 {
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+
+        header h1:hover {
+            color: #2de020;
+            transform: scale(1.05);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav ul li a:hover {
+            color: #2de020;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #2de020;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        #hero {
+            height: 100vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            padding: 20px 10%;
+        }
+
+        #hero .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        #hero h1 {
+            font-size: 3rem;
+            margin: 20px 0;
+        }
+
+        #hero h2 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+
+        #hero h3 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        #hero .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #hero .hero-image img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 50%;
+            border: 5px solid #eee;
+            box-shadow: 8px 16px 32px rgba(255, 255, 255, 1);
+            transition: transform 0.3s, box-shadow 0.9s, border-color 0.3s;
+        }
+
+        #hero .hero-image img:hover {
+            transform: scale(1.1);
+            box-shadow: 16px 32px 64px rgba(112, 238, 234, 1);
+            border-color: #6cf2b8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #121212;
+            font-size: 0.8rem;
+            color: #f7f7f7;
+            transition: all 0.3s ease;
+        }
+
+        footer:hover {
+            background-color: #2a2a2a;
+        }
+
+        /* Amazing Toggle Menu CSS */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 12px;
+            z-index: 1001;
+            transition: all 0.3s ease;
+            background: rgba(45, 224, 32, 0.1);
+            border-radius: 8px;
+        }
+
+        .hamburger:hover {
+            background: rgba(45, 224, 32, 0.2);
+            transform: scale(1.05);
+        }
+
+        .hamburger div {
+            width: 28px;
+            height: 3px;
+            background-color: #fff;
+            margin: 4px 0;
+            transition: all 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+            transform-origin: center;
+        }
+
+        .hamburger.active {
+            background: rgba(45, 224, 32, 0.2);
+        }
+
+        .hamburger.active div:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+            background-color: #2de020;
+        }
+
+        .hamburger.active div:nth-child(2) {
+            opacity: 0;
+            transform: scale(0);
+        }
+
+        .hamburger.active div:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+            background-color: #2de020;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .nav-links.mobile {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 75%;
+            max-width: 320px;
+            background: linear-gradient(135deg, rgba(31, 31, 31, 0.98), rgba(20, 20, 20, 0.98));
+            padding: 90px 25px 25px;
+            box-shadow: -8px 0 20px rgba(0, 0, 0, 0.6);
+            z-index: 999;
+            transform: translateX(100%);
+            transition: transform 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .nav-links.mobile.show {
+            transform: translateX(0);
+        }
+
+        .nav-links.mobile li {
+            text-align: center;
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateX(30px);
+        }
+
+        .nav-links.mobile.show li {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .nav-links.mobile li:hover {
+            background: rgba(45, 224, 32, 0.1);
+            transform: translateX(-8px);
+        }
+
+        .nav-links.mobile li a {
+            font-size: 1.3rem;
+            display: block;
+            padding: 12px;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links.mobile li a:hover {
+            color: #2de020;
+            transform: scale(1.08);
+        }
+
+        /* Staggered animation for menu items */
+        .nav-links.mobile.show li:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+        .nav-links.mobile.show li:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+        .nav-links.mobile.show li:nth-child(3) {
+            transition-delay: 0.3s;
+        }
+        .nav-links.mobile.show li:nth-child(4) {
+            transition-delay: 0.4s;
+        }
+        .nav-links.mobile.show li:nth-child(5) {
+            transition-delay: 0.5s;
+        }
+        .nav-links.mobile.show li:nth-child(6) {
+            transition-delay: 0.6s;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .no-scroll {
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links:not(.mobile) {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding: 10px 5%;
+            }
+
+            #hero .content {
+                order: 2;
+                margin-top: 10px;
+            }
+
+            #hero .hero-image {
+                order: 1;
+                margin-bottom: 10px;
+            }
+
+            #hero h1 {
+                font-size: 2rem;
+            }
+
+            #hero h2,
+            #hero h3 {
+                font-size: 1rem;
+            }
+
+            #hero .hero-image img {
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #hero {
+                padding: 8px 3%;
+            }
+
+            #hero .content {
+                margin-top: 8px;
+            }
+
+            #hero .hero-image {
+                margin-bottom: 8px;
+            }
+
+            #hero h1 {
+                font-size: 1.5rem;
+            }
+
+            #hero h2,
+            #hero h3 {
+                font-size: 0.9rem;
+            }
+
+            #hero .hero-image img {
+                max-width: 250px;
+            }
+        }
+
+        #hero .content a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Rishabh's Portfolio</h1>
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()" tabindex="0" aria-label="Toggle navigation">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="a.html">About</a></li>
+                <li><a href="s.html">Skills</a></li>
+                <li><a href="P.html">Projects</a></li>
+                <li><a href="Cer.html">Certificates</a></li>
+                <li><a href="C.html">Contact</a></li>
+            </ul>
+            <div class="overlay" onclick="toggleMenu()"></div>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="content">
+            <h1>Hi, I'm Rishabh Prajapati</h1>
+            <h2>Study in Indian Institute of Technology, Patna</h2>
+            <h3>Data Science, ML Engineer</h3>
+            <a href="RP_F.pdf">Risahbh-Resume </a>
+        </div>
+        <div class="hero-image">
+            <img src="rpp.jpg" alt="Rishabh-Prajapati">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Rishabh Prajapati. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const hamburger = document.querySelector('.hamburger');
+            const overlay = document.querySelector('.overlay');
+            const body = document.body;
+            
+            // Toggle menu visibility
+            navLinks.classList.toggle('mobile');
+            navLinks.classList.toggle('show');
+            
+            // Toggle hamburger animation
+            hamburger.classList.toggle('active');
+            
+            // Toggle overlay
+            overlay.classList.toggle('active');
+            
+            // Toggle body scroll
+            body.classList.toggle('no-scroll');
+            
+            // Reset animations when closing
+            if (!navLinks.classList.contains('show')) {
+                document.querySelectorAll('.nav-links.mobile li').forEach(item => {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateX(30px)';
+                });
+            }
+        }
+
+        // Close menu when clicking on a link (mobile only)
+        document.querySelectorAll('.nav-links.mobile a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Close menu when pressing Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const navLinks = document.querySelector('.nav-links');
+                if (navLinks.classList.contains('show')) {
+                    toggleMenu();
+                }
+            }
+        });
+
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

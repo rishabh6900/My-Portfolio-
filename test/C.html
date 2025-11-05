@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            background: #121212;
+            background-image: url("b.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+            background-color: #1f1f1f;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            font-size: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 700;
+            transition: color 0.1s;
+        }
+
+        nav ul li a:hover {
+            color: #2de020;
+        }
+
+        section {
+            padding: 50px 10%;
+            text-align: center;
+            background-color: rgba(30, 30, 30, 0.6);
+            border-radius: 10px;
+            margin: 30px auto;
+            max-width: 900px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+            border-radius: 2%;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            color: #ffcc00;
+            margin-bottom: 30px;
+        }
+
+        section p {
+            font-size: 1.2rem;
+            color: #ddd;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: #fff;
+            font-size: 30px;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #dca50e;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #121212;
+            font-size: 0.8rem;
+            color: #f7f7f7;
+        }
+
+        iframe {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-container form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .contact-input {
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 15px;
+            border: none;
+            border: 5px solid #eee;
+            box-shadow: 0 2.5px 4.5px #dca50e;
+        }
+
+        .contact-input:hover {
+            background-color: white;
+            border-color: #dca50e;
+        }
+
+        .contact-container button {
+            background-color: #dca50e;
+            color: #fff;
+            padding: 10px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background 0.1s;
+        }
+
+        .contact-container button:hover {
+            background-color: #2de020;
+        }
+
+        textarea.contact-input {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Enhanced Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 3px 0;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active div:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active div:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .nav-links.mobile {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 70%;
+            max-width: 300px;
+            background-color: rgba(31, 31, 31, 0.98);
+            padding: 80px 20px 20px;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-out;
+        }
+
+        .nav-links.mobile.show {
+            transform: translateX(0);
+        }
+
+        .nav-links.mobile li {
+            text-align: center;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-links.mobile li a {
+            font-size: 1.2rem;
+            display: block;
+            padding: 10px;
+            transition: all 0.3s;
+        }
+
+        .nav-links.mobile li a:hover {
+            color: #2de020;
+            transform: translateX(5px);
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .no-scroll {
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links:not(.mobile) {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Rishabh's Portfolio</h1>
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()" tabindex="0" aria-label="Toggle navigation">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="a.html">About</a></li>
+                <li><a href="s.html">Skills</a></li>
+                <li><a href="P.html">Projects</a></li>
+                <li><a href="Cer.html">Certificates</a></li>
+                <li><a href="C.html">Contact</a></li>
+            </ul>
+            <div class="overlay" onclick="toggleMenu()"></div>
+        </nav>
+    </header>
+    <section id="contact">
+        <div class="contact-container">
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <h2>Contact Me</h2>
+                <input type="hidden" name="access_key" value="0de668ca-10af-4b31-982e-28df35a5542e">
+                <input type="text" name="name" placeholder="Your Name" class="contact-input" required>
+                <input type="email" name="email" placeholder="Your Email" class="contact-input" required>
+                <textarea name="message" placeholder="Your Message" class="contact-input" required></textarea>
+                <button type="submit">Submit </button>
+            </form>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/rishabh-prajapati-0910982b9" target="_blank"><i
+                    class="fab fa-linkedin"></i></a>
+            <a href="https://wa.me/917860634479" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://twitter.com/Pra98422Rishabh" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/rishabh______6900" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:prajapatirishabh071@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Rishabh Prajapati. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const hamburger = document.querySelector('.hamburger');
+            const overlay = document.querySelector('.overlay');
+            const body = document.body;
+            
+            // Toggle menu visibility
+            navLinks.classList.toggle('mobile');
+            navLinks.classList.toggle('show');
+            
+            // Toggle hamburger animation
+            hamburger.classList.toggle('active');
+            
+            // Toggle overlay
+            overlay.classList.toggle('active');
+            
+            // Toggle body scroll
+            body.classList.toggle('no-scroll');
+        }
+
+        // Close menu when clicking on a link (mobile only)
+        document.querySelectorAll('.nav-links.mobile a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
