@@ -15,6 +15,9 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
         header {
@@ -34,12 +37,11 @@
         header h1 {
             font-size: 20px;
         }
+
         /* header:hover {
             background-color: #000000;
-            opacity: 0.9;
             transform: scale(1.05);
         } */
-
 
         nav ul {
             list-style: none;
@@ -56,31 +58,23 @@
             text-decoration: none;
             color: #fff;
             font-weight: 700;
-            transition: color 0.1s;
+            transition: color 0.3s;
         }
 
         nav ul li a:hover {
             color: #2de020;
         }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #121212;
-            font-size: 0.8rem;
-            color: #f7f7f7;
-        }
 
-        /* section {
-            text-align: center;
-            margin-top: 50px;
-            color: #fff;
-        } */
         section {
-            padding: 50px 10%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
-            background-color: rgba(30, 30, 30, 0.6);
+            padding: 50px 10%;
+            background-color: rgba(30, 30, 30, 0.6); /* Dark background with transparency */
             border-radius: 10px;
             margin: 30px auto;
+            width: 80%;
             max-width: 900px;
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
             border-radius: 2%;
@@ -89,26 +83,28 @@
         section h2 {
             font-size: 2rem;
             margin-bottom: 20px;
-            color: #ffcc00;
+            color: #ffcc00; /* Highlighted title color */
         }
 
-        section div {
-            display: inline-block;
-            /* background-color: rgba(0, 0, 0, 0.7); */
-            padding: 20px;
-            /* border-radius: 10px;
-            width: 80%;
-            max-width: 700px;
-            margin: 10px; */
+        section p {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            color: #ddd; /* Softer text color */
         }
 
-        section img {
-            width: 100%;
-            max-width: 700px; /* Increased image size */
-            margin-top: 20px;
-            border-radius: 10px;
-            object-fit: cover; /* Ensures the image scales properly */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #1f1f1f;
+            font-size: 0.8rem;
+            color: #f7f7f7;
+            margin-top: auto; /* Ensures footer sticks to bottom */
         }
+
+
+
+
         /* Hamburger Icon */
         .hamburger {
             display: none;
@@ -121,7 +117,7 @@
             height: 3px;
             background-color: #fff;
             margin: 3px 0;
-            transition: all 0.3s;
+            transition: all 0.1s;
         }
 
         .nav-links {
@@ -150,7 +146,6 @@
             text-align: center;
             padding: 10px 0;
         }
-
         @media (max-width: 768px) {
             .hamburger {
                 display: flex;
@@ -164,8 +159,6 @@
                 display: none;
             }
         }
-
-        
     </style>
 </head>
 <body>
@@ -178,50 +171,38 @@
                 <div></div>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="a.html">About</a></li>
-                <li><a href="s.html">Skills</a></li>
-                <li><a href="P.html">Projects</a></li>
-                <li><a href="Cer.html">Certificates</a></li>
-                <li><a href="C.html">Contact</a></li>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Skills.html">Skills</a></li>
+                <li><a href="Projects.html">Projects</a></li>
+                <li><a href="Certificates.html">Certificates</a></li>
+                <li><a href="Contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <section>
-        <h2>Certificates</h2>
-        <div>
-            <h3>Pandas</h3>
-            <p>Completed the Pandas course on Kaggle.</p>
-            <img src="Rishabh Prajapati - Pandas.png" alt="Pandas Certificate">
-        </div>
-        <!-- <div>
-            <h3>PyTorch</h3>
-            <p>PyTorch Course completed on Udemy.</p>
-            <img src="Pytroch.jpg" alt="PyTorch Certificate">
-        </div> -->
-        <div>
-            <h3>Data visualization</h3>
-            <p>Completed the Data Visualization course on Kaggle.</p>
-            <img src="Rishabh Prajapati - Data Visualization.png" alt="Data Visualization Certificate">
-        </div>
-        <div>
-            <h3>Data science </h3>
-            <p>I completed the Data Science course offered by GUVI-HCL.</p>
-            <img src="HCL GUVI Certification.png" alt="Data Visualization Certificate">
-        </div>
-        <!-- <div>
-            <h3>Data science </h3>
-            <p>I have completed a Data Science course that equipped me with practical skills in Python programming, data manipulation, visualization, and machine learning. I worked on hands-on exercises and projects to build a strong foundation in end-to-end data workflows.</p>
-            <img src="HCL GUVI Certification-Rishabh.png" alt="Data Visualization Certificate">
-        </div> -->
-        
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            Hello! I am <strong>Rishabh Prajapati</strong>, an undergraduate student in <strong>Computer Science and Data Analytics</strong> at <strong>IIT Patna</strong>. 
+            I am driven by a passion for technology and the boundless potential of data.
+        </p>
+        <p>
+            My journey began with a strong foundation in Science and Mathematics, which sparked my interest in 
+            data-driven solutions. I thrive on challenges that require a blend of <strong>logic</strong>, 
+            <strong>analytics</strong>, and <strong>creativity</strong>.
+        </p>
+        <p>
+            With expertise in <strong>Python</strong>, <strong>SQL</strong>, and <strong>Machine Learning</strong>, I focus on applying 
+            my knowledge to real-world problems. I am excited about learning new technologies and taking on innovative projects 
+            in the fields of <strong>Data Science</strong> and <strong>Artificial Intelligence</strong>.
+        </p>
     </section>
-
-
 
     <footer>
         <p>&copy; 2025 Rishabh Prajapati. All Rights Reserved.</p>
     </footer>
+
     <script>
         function toggleMenu() {
             const navLinks = document.querySelector('.nav-links');
@@ -230,4 +211,4 @@
         }
     </script>
 </body>
-</html>
+</html>  
